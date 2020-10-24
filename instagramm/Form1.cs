@@ -14,7 +14,7 @@ using InstagramApiSharp.Logger;
 
 namespace instagramm
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         #region Hidden
         private readonly string userName = "may_yartr";
@@ -22,10 +22,9 @@ namespace instagramm
         #endregion
         private static UserSessionData user;
         private static IInstaApi api;
-        private string[] images;
         private ListBox listBox;
 
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
             user = new UserSessionData();
@@ -45,6 +44,9 @@ namespace instagramm
             if (loginResult.Succeeded)
             {
                 listBox.Items.Add("Log In!");
+                Profile profile = new Profile(user, api);
+                profile.Show();
+                Close();
             }
             else
             {
@@ -53,10 +55,6 @@ namespace instagramm
             
         }
 
-        private void logText_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private async void loginOutButtonClick(object sender, EventArgs e)
         {

@@ -1,6 +1,6 @@
 ﻿namespace instagramm
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -74,7 +74,6 @@
             this.logText.Name = "logText";
             this.logText.Size = new System.Drawing.Size(150, 95);
             this.logText.TabIndex = 2;
-            this.logText.SelectedIndexChanged += new System.EventHandler(this.logText_SelectedIndexChanged);
             // 
             // loginOut
             // 
@@ -86,7 +85,7 @@
             this.loginOut.UseVisualStyleBackColor = true;
             this.loginOut.Click += new System.EventHandler(this.loginOutButtonClick);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +95,7 @@
             this.Controls.Add(this.textLogin);
             this.Controls.Add(this.loginOut);
             this.Controls.Add(this.login);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "her";
             this.ResumeLayout(false);
             this.PerformLayout();
