@@ -7,24 +7,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstagramApiSharp.API;
+using InstagramApiSharp.API.Builder;
+using InstagramApiSharp.Classes;
+using InstagramApiSharp.Logger;
 
 namespace instagramm
 {
     public partial class Form1 : Form
     {
+        #region Hidden
+        private readonly string userName = "may_yartr";
+        private readonly string userPassword = "52364g68";
+        #endregion
+        private static UserSessionData user;
+        private static IInstaApi api;
+        private string[] images;
+        private ListBox listBox;
+
         public Form1()
         {
             InitializeComponent();
+            user = new UserSessionData();
+            user.UserName = userName;
+            user.Password = userPassword;
+            listBox = logText;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void loginButtonClick(object sender, EventArgs e)
+        {
+                api = InstaApiBuilder.CreateBuilder()
+                .SetUser(user)
+                .Build();
+
+            var loginResult = await api.LoginAsync();
+
+            if (loginResult.Succeeded)
+            {
+                listBox.Items.Add("Log In!");
+            }
+            else
+            {
+                listBox.Items.Add("Not Log In!");
+            }
+            
+        }
+
+        private void logText_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private async void loginOutButtonClick(object sender, EventArgs e)
         {
-            //бла бла бла бла бла
+            var outResult = await api.LogoutAsync();
+            if (outResult.Succeeded)
+            {
+                listBox.Items.Add("LogOut!");
+            }
         }
     }
 }
