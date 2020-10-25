@@ -31,16 +31,14 @@
             this.login = new System.Windows.Forms.Button();
             this.textLogin = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.logText = new System.Windows.Forms.ListBox();
             this.loginOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(49, 327);
+            this.login.Location = new System.Drawing.Point(49, 268);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(117, 45);
+            this.login.Size = new System.Drawing.Size(110, 110);
             this.login.TabIndex = 0;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
@@ -48,38 +46,28 @@
             // 
             // textLogin
             // 
-            this.textLogin.Location = new System.Drawing.Point(102, 54);
+            this.textLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textLogin.Location = new System.Drawing.Point(49, 54);
             this.textLogin.Name = "textLogin";
-            this.textLogin.Size = new System.Drawing.Size(150, 20);
+            this.textLogin.Size = new System.Drawing.Size(270, 38);
             this.textLogin.TabIndex = 1;
             this.textLogin.Text = "login";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 91);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(49, 134);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
+            this.textBox1.Size = new System.Drawing.Size(270, 38);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "password";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // logText
-            // 
-            this.logText.FormattingEnabled = true;
-            this.logText.Location = new System.Drawing.Point(102, 208);
-            this.logText.Name = "logText";
-            this.logText.Size = new System.Drawing.Size(150, 95);
-            this.logText.TabIndex = 2;
-            // 
             // loginOut
             // 
-            this.loginOut.Location = new System.Drawing.Point(202, 327);
+            this.loginOut.Location = new System.Drawing.Point(209, 268);
             this.loginOut.Name = "loginOut";
-            this.loginOut.Size = new System.Drawing.Size(117, 45);
+            this.loginOut.Size = new System.Drawing.Size(110, 110);
             this.loginOut.TabIndex = 0;
             this.loginOut.Text = "Out";
             this.loginOut.UseVisualStyleBackColor = true;
@@ -90,7 +78,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 407);
-            this.Controls.Add(this.logText);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textLogin);
             this.Controls.Add(this.loginOut);
@@ -107,8 +94,6 @@
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.TextBox textLogin;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ListBox logText;
         private System.Windows.Forms.Button loginOut;
     }
 }

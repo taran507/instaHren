@@ -30,27 +30,19 @@ namespace instagramm
             user = new UserSessionData();
             user.UserName = userName;
             user.Password = userPassword;
-            listBox = logText;
         }
 
         private async void loginButtonClick(object sender, EventArgs e)
         {
-                api = InstaApiBuilder.CreateBuilder()
-                .SetUser(user)
-                .Build();
-
-            var loginResult = await api.LoginAsync();
+            
 
             if (loginResult.Succeeded)
             {
-                listBox.Items.Add("Log In!");
-                Profile profile = new Profile(user, api);
-                profile.Show();
-                Close();
+                
             }
             else
             {
-                listBox.Items.Add("Not Log In!");
+                
             }
             
         }
