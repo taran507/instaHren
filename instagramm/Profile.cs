@@ -2,38 +2,61 @@
 using InstagramApiSharp.API.Builder;
 using InstagramApiSharp.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace instagramm
 {
     public partial class Profile : Form
     {
-        private static UserSessionData user;
-        private static IInstaApi api;
+        #region Hidden
+        private readonly string userName = "may_yartr";
+        private readonly string userPassword = "52364g68";
+        #endregion
+        public UserSessionData user { get; set; }
+        public IInstaApi api { get; set; }
+
+        LoginForm loginForm;
         public Profile()
         {
             InitializeComponent();
-            user = new UserSessionData();
+            if (user==null)
+            {
+                loginForm = new LoginForm(this);
+                loginForm.ShowDialog();
+                if (loginForm.DialogResult == DialogResult.OK)
+                {
+                    listBox1.Items.Add("user: " + user.UserName);
+                    listBox1.Items.Add("password: " + user.Password);
 
-            PhotoProfile.Image = Image.FromFile("C:\\Users\\taran\\Pictures\\ghjdthrf\\_MG_6341.jpg");
+                }
+            }
+            else
+            {
+                Login();
+            }
         }
-        private void Profile_Activated(object sender, EventArgs e)
+        /*private void Profile_Activated(object sender, EventArgs e)
         {
             
-        }
-        public async Task<IResult<InstaLoginResult>> LoginSucceded(UserSessionData user1)
+        }*/
+        private async void Login()
         {
-            api = InstaApiBuilder.CreateBuilder().SetUser(user1).Build();
-            var loginRes = await api.LoginAsync();
-            return loginRes;
-            
+            user = new UserSessionData();
+            user.UserName = userName;
+            user.Password = userPassword;
+
+            api = InstaApiBuilder.CreateBuilder().SetUser(user).Build();
+            var res = await api.LoginAsync();
+            Debug.WriteLine("Log in "+res.Info);
+
+        }
+
+        private async  void Exit_Click(object sender, EventArgs e)
+        {
+            var logoutres = await api.LogoutAsync();
+            Debug.WriteLine("LogoutRes: " + logoutres.Info);
         }
     }
 }

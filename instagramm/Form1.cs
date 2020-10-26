@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 using InstagramApiSharp.API;
 using InstagramApiSharp.API.Builder;
 using InstagramApiSharp.Classes;
-using InstagramApiSharp.Logger;
 
 namespace instagramm
 {
@@ -22,11 +15,11 @@ namespace instagramm
         #endregion
         private static UserSessionData user;
         private static IInstaApi api;
-        private ListBox listBox;
-
-        public LoginForm()
+        private Profile profile;
+        public LoginForm(Profile profile)
         {
             InitializeComponent();
+            this.profile = profile;
             user = new UserSessionData();
             user.UserName = userName;
             user.Password = userPassword;
@@ -34,27 +27,20 @@ namespace instagramm
 
         private async void loginButtonClick(object sender, EventArgs e)
         {
-            
-
-            if (loginResult.Succeeded)
+            api = InstaApiBuilder.CreateBuilder().SetUser(user).Build();
+            var res = await api.LoginAsync();
+            if (res.Succeeded)
             {
-                
+                profile.api = api;
+                profile.user = user;
+                DialogResult = DialogResult.OK;
             }
             else
             {
-                
-            }
-            
-        }
-
-
-        private async void loginOutButtonClick(object sender, EventArgs e)
-        {
-            var outResult = await api.LogoutAsync();
-            if (outResult.Succeeded)
-            {
-                listBox.Items.Add("LogOut!");
+                textBox2.Text = "Error!";
+                Debug.WriteLine("Error: " + res.Info);
             }
         }
+        
     }
 }
