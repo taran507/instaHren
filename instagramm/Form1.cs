@@ -10,8 +10,8 @@ namespace instagramm
     public partial class LoginForm : Form
     {
         #region Hidden
-        private readonly string userName = "may_yartr";
-        private readonly string userPassword = "52364g68";
+        private readonly string userName = "dfsgf.dsfg";//"may_yartr";
+        private readonly string userPassword = " pn&1IeXabIA2";//"52364g68";
         #endregion
         private static UserSessionData user;
         private static IInstaApi api;
@@ -28,17 +28,30 @@ namespace instagramm
         private async void loginButtonClick(object sender, EventArgs e)
         {
             api = InstaApiBuilder.CreateBuilder().SetUser(user).Build();
-            var res = await api.LoginAsync();
-            if (res.Succeeded)
+            try
             {
-                profile.api = api;
-                profile.user = user;
-                DialogResult = DialogResult.OK;
-            }
-            else
+                var res = await api.LoginAsync();
+                if (res.Succeeded)
+                {
+                    profile.api = api;
+                    profile.user = user;
+                    DialogResult = DialogResult.OK;
+                    //this.Close();
+                }
+                else if (res.Info.ToString() == "Unknown: Challenge is required.")
+                {
+
+                    Debug.WriteLine("Error: " + api.GetCurrentDevice().DeviceModel);
+
+                }
+                else
+                {
+                    textBox2.Text = "Error!";
+                    Debug.WriteLine("Error: " + res.Info);
+                }
+            }catch(Exception ex)
             {
-                textBox2.Text = "Error!";
-                Debug.WriteLine("Error: " + res.Info);
+                Debug.WriteLine(ex);
             }
         }
         

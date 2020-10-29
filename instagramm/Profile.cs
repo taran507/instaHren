@@ -1,6 +1,8 @@
 ﻿using InstagramApiSharp.API;
 using InstagramApiSharp.API.Builder;
+using InstagramApiSharp.API.Processors;
 using InstagramApiSharp.Classes;
+using InstagramApiSharp.Classes.Models;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -16,8 +18,9 @@ namespace instagramm
         #endregion
         public UserSessionData user { get; set; }
         public IInstaApi api { get; set; }
-
-        LoginForm loginForm;
+        private OpenFileDialog openFile;
+        private LoginForm loginForm;
+        private InstaImageUpload image;
         public Profile()
         {
             InitializeComponent();
@@ -57,6 +60,28 @@ namespace instagramm
         {
             var logoutres = await api.LogoutAsync();
             Debug.WriteLine("LogoutRes: " + logoutres.Info);
+            loginForm = new LoginForm(this);
+            loginForm.ShowDialog();
+        }
+
+        private void UploadPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void OpenFile_ClickAsync(object sender, EventArgs e)
+        {
+            openFile = new OpenFileDialog();
+            openFile.ShowDialog();
+            image = new InstaImageUpload
+            {
+                Height = 0,
+                Width = 0,
+                Uri = openFile.FileName
+            };
+            var res = await api.MediaProcessor.UploadPhotoAsync(image,"new");
+            listBox1.Items.Add(res.Info);
+
         }
     }
 }
