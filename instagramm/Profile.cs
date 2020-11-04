@@ -4,8 +4,11 @@ using InstagramApiSharp.API.Processors;
 using InstagramApiSharp.Classes;
 using InstagramApiSharp.Classes.Models;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace instagramm
@@ -24,7 +27,7 @@ namespace instagramm
         public Profile()
         {
             InitializeComponent();
-            if (user==null)
+            if (user == null)
             {
                 loginForm = new LoginForm(this);
                 loginForm.ShowDialog();
@@ -32,18 +35,16 @@ namespace instagramm
                 {
                     listBox1.Items.Add("user: " + user.UserName);
                     listBox1.Items.Add("password: " + user.Password);
-
                 }
             }
             else
             {
                 Login();
             }
+            UsrInfo();
         }
-        /*private void Profile_Activated(object sender, EventArgs e)
-        {
-            
-        }*/
+        
+        
         private async void Login()
         {
             user = new UserSessionData();
@@ -55,16 +56,21 @@ namespace instagramm
             Debug.WriteLine("Log in "+res.Info);
 
         }
+        private async void UsrInfo()
+        {
+            var profile = await api.UserProcessor.GetUserInfoByUsernameAsync("taran507");
+            PhotoProfile.ImageLocation = profile.Value.ProfilePicUrl;
+            //this.Follovers.Text = "Follovers: " + profile.Value.FollowerCount; 
+        }
 
         private async  void Exit_Click(object sender, EventArgs e)
         {
             var logoutres = await api.LogoutAsync();
-            Debug.WriteLine("LogoutRes: " + logoutres.Info);
             loginForm = new LoginForm(this);
             loginForm.ShowDialog();
         }
 
-        private void UploadPhoto_Click(object sender, EventArgs e)
+        private void UploadPhoto_Click(object sender, EventArgs e) //
         {
 
         }
@@ -79,7 +85,7 @@ namespace instagramm
                 Width = 0,
                 Uri = openFile.FileName
             };
-            var res = await api.MediaProcessor.UploadPhotoAsync(image,"new");
+            var res = await api.MediaProcessor.UploadPhotoAsync(image,"new"); //так выглядит загрузка фото
             listBox1.Items.Add(res.Info);
 
         }

@@ -33,11 +33,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenFile = new System.Windows.Forms.Button();
+            this.Follovers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // PhotoProfile
             // 
+            this.PhotoProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.PhotoProfile.Location = new System.Drawing.Point(24, 27);
             this.PhotoProfile.Name = "PhotoProfile";
             this.PhotoProfile.Size = new System.Drawing.Size(150, 150);
@@ -46,7 +48,7 @@
             // 
             // UploadPhoto
             // 
-            this.UploadPhoto.Location = new System.Drawing.Point(309, 374);
+            this.UploadPhoto.Location = new System.Drawing.Point(545, 374);
             this.UploadPhoto.Name = "UploadPhoto";
             this.UploadPhoto.Size = new System.Drawing.Size(144, 23);
             this.UploadPhoto.TabIndex = 1;
@@ -57,9 +59,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(372, 93);
+            this.listBox1.Location = new System.Drawing.Point(24, 198);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(230, 160);
             this.listBox1.TabIndex = 2;
             // 
             // ExitButton
@@ -74,7 +76,7 @@
             // 
             // OpenFile
             // 
-            this.OpenFile.Location = new System.Drawing.Point(594, 250);
+            this.OpenFile.Location = new System.Drawing.Point(695, 374);
             this.OpenFile.Name = "OpenFile";
             this.OpenFile.Size = new System.Drawing.Size(75, 23);
             this.OpenFile.TabIndex = 4;
@@ -82,11 +84,22 @@
             this.OpenFile.UseVisualStyleBackColor = true;
             this.OpenFile.Click += new System.EventHandler(this.OpenFile_ClickAsync);
             // 
+            // Follovers
+            // 
+            this.Follovers.AutoSize = true;
+            this.Follovers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Follovers.Location = new System.Drawing.Point(269, 27);
+            this.Follovers.Name = "Follovers";
+            this.Follovers.Size = new System.Drawing.Size(72, 20);
+            this.Follovers.TabIndex = 5;
+            this.Follovers.Text = "Follovers";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Follovers);
             this.Controls.Add(this.OpenFile);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.listBox1);
@@ -96,6 +109,7 @@
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +120,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button OpenFile;
+        private System.Windows.Forms.Label Follovers;
     }
 }
