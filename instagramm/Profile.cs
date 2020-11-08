@@ -24,6 +24,7 @@ namespace instagramm
         private OpenFileDialog openFile;
         private LoginForm loginForm;
         private InstaImageUpload image;
+        private IResult<InstaUserInfo> profile = null;
         public Profile()
         {
             InitializeComponent();
@@ -42,6 +43,11 @@ namespace instagramm
                 Login();
             }
             UsrInfo();
+            Thread.Sleep(1000);
+            PhotoProfile.ImageLocation = profile.Value.ProfilePicUrl;
+            Follovers.Text = "Follovers: "+profile.Value.FollowerCount;
+            Folloving.Text = "Folloving: " + profile.Value.FollowingCount;
+            Post.Text = "Post: " + profile.Value.MediaCount;
         }
         
         
@@ -58,9 +64,7 @@ namespace instagramm
         }
         private async void UsrInfo()
         {
-            var profile = await api.UserProcessor.GetUserInfoByUsernameAsync("taran507");
-            PhotoProfile.ImageLocation = profile.Value.ProfilePicUrl;
-            //this.Follovers.Text = "Follovers: " + profile.Value.FollowerCount; 
+            profile = await api.UserProcessor.GetUserInfoByUsernameAsync("taran507");  
         }
 
         private async  void Exit_Click(object sender, EventArgs e)
@@ -70,9 +74,10 @@ namespace instagramm
             loginForm.ShowDialog();
         }
 
-        private void UploadPhoto_Click(object sender, EventArgs e) //
+        private async void UploadPhoto_Click(object sender, EventArgs e) //
         {
-
+            var res = await api.MediaProcessor.UploadPhotoAsync(image, "new"); //так выглядит загрузка фото
+            listBox1.Items.Add(res.Info);
         }
 
         private async void OpenFile_ClickAsync(object sender, EventArgs e)
@@ -85,9 +90,7 @@ namespace instagramm
                 Width = 0,
                 Uri = openFile.FileName
             };
-            var res = await api.MediaProcessor.UploadPhotoAsync(image,"new"); //так выглядит загрузка фото
-            listBox1.Items.Add(res.Info);
-
+            listBox1.Items.Add(openFile.FileName);
         }
     }
 }

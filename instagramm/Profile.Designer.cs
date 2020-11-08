@@ -34,7 +34,13 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenFile = new System.Windows.Forms.Button();
             this.Follovers = new System.Windows.Forms.Label();
+            this.Folloving = new System.Windows.Forms.Label();
+            this.Post = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PhotoProfile
@@ -61,7 +67,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(24, 198);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(230, 160);
+            this.listBox1.Size = new System.Drawing.Size(150, 160);
             this.listBox1.TabIndex = 2;
             // 
             // ExitButton
@@ -94,11 +100,56 @@
             this.Follovers.TabIndex = 5;
             this.Follovers.Text = "Follovers";
             // 
+            // Folloving
+            // 
+            this.Folloving.AutoSize = true;
+            this.Folloving.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Folloving.Location = new System.Drawing.Point(385, 27);
+            this.Folloving.Name = "Folloving";
+            this.Folloving.Size = new System.Drawing.Size(71, 20);
+            this.Folloving.TabIndex = 5;
+            this.Folloving.Text = "Folloving";
+            // 
+            // Post
+            // 
+            this.Post.AutoSize = true;
+            this.Post.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Post.Location = new System.Drawing.Point(541, 27);
+            this.Post.Name = "Post";
+            this.Post.Size = new System.Drawing.Size(41, 20);
+            this.Post.TabIndex = 5;
+            this.Post.Text = "Post";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.3159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.6841F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(273, 173);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 169);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 78);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.Post);
+            this.Controls.Add(this.Folloving);
             this.Controls.Add(this.Follovers);
             this.Controls.Add(this.OpenFile);
             this.Controls.Add(this.ExitButton);
@@ -108,6 +159,8 @@
             this.Name = "Profile";
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +174,9 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button OpenFile;
         private System.Windows.Forms.Label Follovers;
+        private System.Windows.Forms.Label Folloving;
+        private System.Windows.Forms.Label Post;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
