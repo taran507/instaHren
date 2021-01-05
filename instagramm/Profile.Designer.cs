@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.PhotoProfile = new System.Windows.Forms.PictureBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenFile = new System.Windows.Forms.Button();
@@ -162,6 +163,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(808, 427);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Post);
