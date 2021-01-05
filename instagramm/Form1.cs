@@ -47,7 +47,7 @@ namespace instagramm
                 else
                 {
                     textBox2.Text = "Error!";
-                    Debug.WriteLine("Error: " + res.Info);
+                    MessageBox.Show("Error: " + res.Info);
                 }
             }catch(Exception ex)
             {

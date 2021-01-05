@@ -21,50 +21,36 @@ namespace instagramm
         #endregion
         public UserSessionData user { get; set; }
         public IInstaApi api { get; set; }
-        private OpenFileDialog openFile;
         private LoginForm loginForm;
-        private InstaImageUpload image;
+        private UploadPhoto uploadPhotoForm;
         private IResult<InstaUserInfo> profile = null;
+        private Files files;
         public Profile()
         {
             InitializeComponent();
-            if (user == null)
+            Loadform();
+        }
+        private void Loadform()
+        {
+            loginForm = new LoginForm(this);
+            loginForm.ShowDialog();
+            if (loginForm.DialogResult == DialogResult.OK)
             {
-                loginForm = new LoginForm(this);
-                loginForm.ShowDialog();
-                if (loginForm.DialogResult == DialogResult.OK)
-                {
-                    listBox1.Items.Add("user: " + user.UserName);
-                    listBox1.Items.Add("password: " + user.Password);
-                }
+                UsrInfo();
+                Thread.Sleep(1000);
+                PhotoProfile.ImageLocation = profile.Value.ProfilePicUrl;
+                Follovers.Text = "Follovers: " + profile.Value.FollowerCount;
+                Folloving.Text = "Folloving: " + profile.Value.FollowingCount;
+                Post.Text = "Post: " + profile.Value.MediaCount;
             }
             else
             {
-                Login();
+                this.Close();
             }
-            UsrInfo();
-            Thread.Sleep(1000);
-            PhotoProfile.ImageLocation = profile.Value.ProfilePicUrl;
-            Follovers.Text = "Follovers: "+profile.Value.FollowerCount;
-            Folloving.Text = "Folloving: " + profile.Value.FollowingCount;
-            Post.Text = "Post: " + profile.Value.MediaCount;
-        }
-        
-        
-        private async void Login()
-        {
-            user = new UserSessionData();
-            user.UserName = userName;
-            user.Password = userPassword;
-
-            api = InstaApiBuilder.CreateBuilder().SetUser(user).Build();
-            var res = await api.LoginAsync();
-            Debug.WriteLine("Log in "+res.Info);
-
         }
         private async void UsrInfo()
         {
-            profile = await api.UserProcessor.GetUserInfoByUsernameAsync("taran507");  
+            profile = await api.UserProcessor.GetUserInfoByUsernameAsync(user.UserName);  
         }
 
         private async  void Exit_Click(object sender, EventArgs e)
@@ -74,23 +60,34 @@ namespace instagramm
             loginForm.ShowDialog();
         }
 
-        private async void UploadPhoto_Click(object sender, EventArgs e) //
+        private async void UploadPhoto(object sender, EventArgs e) //
         {
-            var res = await api.MediaProcessor.UploadPhotoAsync(image, "new"); //так выглядит загрузка фото
-            listBox1.Items.Add(res.Info);
+            /*var res = await api.MediaProcessor.UploadPhotoAsync(image, "new"); //так выглядит загрузка фото
+            listBox1.Items.Add(res.Info);*/
         }
 
-        private async void OpenFile_ClickAsync(object sender, EventArgs e)
+
+        private void OpenFile_Click(object sender, EventArgs e)
         {
-            openFile = new OpenFileDialog();
-            openFile.ShowDialog();
-            image = new InstaImageUpload
+            files = new Files();
+            uploadPhotoForm = new UploadPhoto(files);
+            uploadPhotoForm.ShowDialog();
+
+            if (uploadPhotoForm.DialogResult == DialogResult.OK)
             {
-                Height = 0,
-                Width = 0,
-                Uri = openFile.FileName
-            };
-            listBox1.Items.Add(openFile.FileName);
+                foreach (string file in files.filePath)
+                {
+                    //pictureBox1.ImageLocation = file;
+                }
+                richTextBox1.Text = files.caption;
+                pictureBox1.ImageLocation = files.filePath.Last();
+            }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            api.LogoutAsync();
+            Loadform();
         }
     }
 }

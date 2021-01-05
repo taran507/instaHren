@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.PhotoProfile = new System.Windows.Forms.PictureBox();
-            this.UploadPhoto = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenFile = new System.Windows.Forms.Button();
             this.Follovers = new System.Windows.Forms.Label();
             this.Folloving = new System.Windows.Forms.Label();
             this.Post = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,24 +53,6 @@
             this.PhotoProfile.TabIndex = 0;
             this.PhotoProfile.TabStop = false;
             // 
-            // UploadPhoto
-            // 
-            this.UploadPhoto.Location = new System.Drawing.Point(545, 374);
-            this.UploadPhoto.Name = "UploadPhoto";
-            this.UploadPhoto.Size = new System.Drawing.Size(144, 23);
-            this.UploadPhoto.TabIndex = 1;
-            this.UploadPhoto.Text = "Upload Photo";
-            this.UploadPhoto.UseVisualStyleBackColor = true;
-            this.UploadPhoto.Click += new System.EventHandler(this.UploadPhoto_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(24, 198);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(150, 160);
-            this.listBox1.TabIndex = 2;
-            // 
             // ExitButton
             // 
             this.ExitButton.Location = new System.Drawing.Point(713, 12);
@@ -78,7 +61,7 @@
             this.ExitButton.TabIndex = 3;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.Exit_Click);
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // OpenFile
             // 
@@ -88,7 +71,7 @@
             this.OpenFile.TabIndex = 4;
             this.OpenFile.Text = "Open File";
             this.OpenFile.UseVisualStyleBackColor = true;
-            this.OpenFile.Click += new System.EventHandler(this.OpenFile_ClickAsync);
+            this.OpenFile.Click += new System.EventHandler(this.OpenFile_Click);
             // 
             // Follovers
             // 
@@ -120,33 +103,66 @@
             this.Post.TabIndex = 5;
             this.Post.Text = "Post";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(24, 198);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(150, 160);
+            this.listBox1.TabIndex = 2;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteButton.Location = new System.Drawing.Point(403, 3);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(91, 91);
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = "delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.3159F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.6841F));
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel1.Controls.Add(this.deleteButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(273, 173);
+            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(273, 67);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 169);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 291);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 78);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(100, 91);
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(109, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(288, 91);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
             // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 427);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Post);
             this.Controls.Add(this.Folloving);
@@ -154,9 +170,13 @@
             this.Controls.Add(this.OpenFile);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.UploadPhoto);
             this.Controls.Add(this.PhotoProfile);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(824, 466);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(824, 466);
             this.Name = "Profile";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.PhotoProfile)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -169,14 +189,15 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PhotoProfile;
-        private System.Windows.Forms.Button UploadPhoto;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button OpenFile;
         private System.Windows.Forms.Label Follovers;
         private System.Windows.Forms.Label Folloving;
         private System.Windows.Forms.Label Post;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
