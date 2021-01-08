@@ -59,14 +59,6 @@ namespace instagramm
             loginForm = new LoginForm(this);
             loginForm.ShowDialog();
         }
-
-        private async void UploadPhoto(object sender, EventArgs e) //
-        {
-            /*var res = await api.MediaProcessor.UploadPhotoAsync(image, "new"); //так выглядит загрузка фото
-            listBox1.Items.Add(res.Info);*/
-        }
-
-
         private void OpenFile_Click(object sender, EventArgs e)
         {
             files = new Files();
@@ -75,10 +67,7 @@ namespace instagramm
 
             if (uploadPhotoForm.DialogResult == DialogResult.OK)
             {
-                foreach (string file in files.filePath)
-                {
-                    //pictureBox1.ImageLocation = file;
-                }
+                Upload(files);
                 richTextBox1.Text = files.caption;
                 pictureBox1.ImageLocation = files.filePath.Last();
             }
@@ -88,6 +77,26 @@ namespace instagramm
         {
             api.LogoutAsync();
             Loadform();
+        }
+        private async void Upload(Files files)
+        {
+            if (files.filePath.Count > 1)
+            {
+                List<InstaAlbumUpload> instaAlbum = new List<InstaAlbumUpload>();
+                foreach(string file in files.filePath)
+                {
+                    instaAlbum.Add(new InstaAlbumUpload { ImageToUpload = new InstaImageUpload { Uri = file } });
+                }
+                var res = await api.MediaProcessor.UploadAlbumAsync(instaAlbum.ToArray(), files.caption);
+                listBox1.Items.Add(res.Info);
+                    
+            }
+            else if (files.filePath.Count == 1)
+            {
+                InstaImageUpload instaImage = new InstaImageUpload { Uri=files.filePath.First()};
+                var res = await api.MediaProcessor.UploadPhotoAsync(instaImage, files.caption); //так выглядит загрузка фото
+                listBox1.Items.Add(res.Info);
+            }
         }
     }
 }
