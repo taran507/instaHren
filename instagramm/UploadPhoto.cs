@@ -40,7 +40,7 @@ namespace instagramm
                     pictureBox1.Image = Image.FromFile(file);
                     i = false;
                 }
-                tableLayoutPanel1.Controls.Add(new PictureBox()
+                PhotoPanel.Controls.Add(new PictureBox()
                 {
                     Image = Image.FromFile(file),
                     SizeMode = PictureBoxSizeMode.Zoom,

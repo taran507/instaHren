@@ -21,8 +21,8 @@ namespace instagramm
             InitializeComponent();
             this.profile = profile;
             user = new UserSessionData();
-            user.UserName = userName;
-            user.Password = userPassword;
+            user.UserName = textLogin.Text;
+            user.Password = textPassword.Text;
         }
 
         private async void loginButtonClick(object sender, EventArgs e)
