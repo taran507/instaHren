@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UploadPhoto));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -44,9 +45,9 @@
             this.checkBox1.AutoEllipsis = true;
             this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox1.Location = new System.Drawing.Point(288, 26);
+            this.checkBox1.Location = new System.Drawing.Point(33, 237);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 16);
+            this.checkBox1.Size = new System.Drawing.Size(107, 18);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "История";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,9 +58,9 @@
             this.checkBox2.AutoEllipsis = true;
             this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox2.Location = new System.Drawing.Point(288, 49);
+            this.checkBox2.Location = new System.Drawing.Point(146, 237);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(92, 16);
+            this.checkBox2.Size = new System.Drawing.Size(107, 18);
             this.checkBox2.TabIndex = 0;
             this.checkBox2.Text = "Карусель";
             this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,9 +71,9 @@
             this.checkBox3.AutoEllipsis = true;
             this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox3.Location = new System.Drawing.Point(288, 72);
+            this.checkBox3.Location = new System.Drawing.Point(146, 261);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(92, 16);
+            this.checkBox3.Size = new System.Drawing.Size(107, 18);
             this.checkBox3.TabIndex = 0;
             this.checkBox3.Text = "Видео";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,38 +81,43 @@
             // 
             // Open_file_botton
             // 
-            this.Open_file_botton.Location = new System.Drawing.Point(293, 173);
+            this.Open_file_botton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Open_file_botton.ForeColor = System.Drawing.Color.White;
+            this.Open_file_botton.Location = new System.Drawing.Point(14, 308);
             this.Open_file_botton.Name = "Open_file_botton";
-            this.Open_file_botton.Size = new System.Drawing.Size(75, 23);
+            this.Open_file_botton.Size = new System.Drawing.Size(87, 27);
             this.Open_file_botton.TabIndex = 1;
             this.Open_file_botton.Text = "Open file";
-            this.Open_file_botton.UseVisualStyleBackColor = true;
+            this.Open_file_botton.UseVisualStyleBackColor = false;
             this.Open_file_botton.Click += new System.EventHandler(this.Open_file_botton_Click);
             // 
             // Upload_photo
             // 
-            this.Upload_photo.Location = new System.Drawing.Point(293, 261);
+            this.Upload_photo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Upload_photo.ForeColor = System.Drawing.Color.White;
+            this.Upload_photo.Location = new System.Drawing.Point(359, 308);
             this.Upload_photo.Name = "Upload_photo";
-            this.Upload_photo.Size = new System.Drawing.Size(75, 23);
+            this.Upload_photo.Size = new System.Drawing.Size(87, 27);
             this.Upload_photo.TabIndex = 2;
             this.Upload_photo.Text = "Ok";
-            this.Upload_photo.UseVisualStyleBackColor = true;
+            this.Upload_photo.UseVisualStyleBackColor = false;
             this.Upload_photo.Click += new System.EventHandler(this.Upload_photo_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(14, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 184);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 203);
+            this.richTextBox1.Location = new System.Drawing.Point(291, 14);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(232, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(165, 258);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Tag = "comment";
             this.richTextBox1.Text = "";
@@ -123,9 +129,10 @@
             // 
             // UploadPhoto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 310);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(468, 358);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Upload_photo);
@@ -133,8 +140,10 @@
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
+            this.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "UploadPhoto";
-            this.Text = "UploadPhoto";
+            this.Text = "Instagram Poster";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -117,20 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ExitButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAYAAABGiCfwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAElSURBVEhL3dUxSsRAFMbxPcdqpWhh4Q3E0mZFLAQbBQ+w
+        F9jaA1hYuZZewFbwALaiohYeQBDZ3QNk/y/MC8+X2aATJ8UWvyLz5fGRyZD0iqKYBjNH1/8tl7KFodM6
+        Tym7x1tYi+WqlqeUXWATV+Ha58rOlnnKO5OyfnCEV/xqvm2ZWMclJmicl7LrPzqDLVMHeEFjWWwwlX3K
+        7GVqH8/4sa25yoR/l1nL1ABP6KRMrGHcVdkOHrooG+IT2U6j2MANsh/9PTwi69FfwQhfsEVV2Ulw6ui6
+        z3cRK9rCLaptc8qy6sKxN9rcf4jFIeQf1zgvZQtDR9dt2SrO8Q07K2rzbcq2cQefKztb5qllx/hALFc2
+        K/OUsndEfyFOLU85IMn5spYV0zlT6ttI0EoWzQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFYSURBVFhHxZaxTsNADIbzJJFQpUpRJTp2Y0EMbEyReIYMMDKz8hzdEQNrZlYegFdx+zux5bsE
-        SJzL9ZM+JfbpbF+aSC0mQCNmgz53u4HId8t54IYv2y17qSGANLXNsw8xxupD2FN7XAS1bbtI1OhK+aCm
-        aVRP3OsmKFZVlTaZE591c7EBZCObewAuEIt8rgGAbGTruuarFJwbn3XDxURP3OsmKOgRNbpSfuxJPCaB
-        yrIMRO77/ZXoeFQRi1jnnYngF8qKHA/w86EiF5mMSQNYsc47EyJFp5oU/UcEEd/ePKk2xj02pIS+NhtW
-        msOH+zfVxv16UoLm5pSBaw0wOL191PK5IV5jgNFHbzVve2wS4uaADndXLO5FxI/PB7bPLWbs9EAHsErz
-        VANo46i5ILm/dKONf2ku8Mlx7cJB7EaK/FcsftxJf/8p0H5/HQwQxasjzXQA4wyK4gSSO5G6t3gx1wAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
 </root>
