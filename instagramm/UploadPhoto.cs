@@ -15,28 +15,43 @@ namespace instagramm
     {
         private OpenFileDialog openFile;
         private Files files;
-        private InstaImageUpload image;
 
         public UploadPhoto(Files files)
         {
             InitializeComponent();
             this.files = files;
+            dateTimePicker1.CustomFormat = "dd,MM-HH:mm";
         }
 
-        private void Open_file_botton_Click(object sender, EventArgs e)
+        private async void Open_file_botton_Click(object sender, EventArgs e)
         {
             openFile = openFileDialog1;
             openFile.ShowDialog();
-            foreach (string file in openFile.FileNames)
+            await Show_pictures(openFile.FileNames);
+        }
+        private Task Show_pictures(string[] photos)
+        {
+            bool i = true;
+            foreach (string file in photos)
             {
                 files.filePath.Add(file);
+                if (i)
+                {
+                    pictureBox1.Image = Image.FromFile(file);
+                    i = false;
+                }
+                PhotoPanel.Controls.Add(new PictureBox()
+                {
+                    Image = Image.FromFile(file),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Dock = DockStyle.Fill,
+                });
             }
-            files.caption = richTextBox1.Text;
-            pictureBox1.ImageLocation = files.filePath.Last();
+            return Task.CompletedTask;
         }
-
         private void Upload_photo_Click(object sender, EventArgs e)
         {
+            files.caption = richTextBox1.Text;
             DialogResult = DialogResult.OK;
         }
     }
