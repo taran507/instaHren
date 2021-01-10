@@ -71,7 +71,7 @@
             this.OpenFile.BackColor = System.Drawing.Color.DodgerBlue;
             this.OpenFile.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OpenFile.ForeColor = System.Drawing.Color.White;
-            this.OpenFile.Location = new System.Drawing.Point(13, 327);
+            this.OpenFile.Location = new System.Drawing.Point(163, 347);
             this.OpenFile.Name = "OpenFile";
             this.OpenFile.Size = new System.Drawing.Size(87, 27);
             this.OpenFile.TabIndex = 4;

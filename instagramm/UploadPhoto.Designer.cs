@@ -83,7 +83,7 @@
             // 
             // Open_file_botton
             // 
-            this.Open_file_botton.Location = new System.Drawing.Point(350, 80);
+            this.Open_file_botton.Location = new System.Drawing.Point(367, 338);
             this.Open_file_botton.Name = "Open_file_botton";
             this.Open_file_botton.Size = new System.Drawing.Size(75, 23);
             this.Open_file_botton.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             // Upload_photo
             // 
-            this.Upload_photo.Location = new System.Drawing.Point(350, 109);
+            this.Upload_photo.Location = new System.Drawing.Point(367, 378);
             this.Upload_photo.Name = "Upload_photo";
             this.Upload_photo.Size = new System.Drawing.Size(75, 23);
             this.Upload_photo.TabIndex = 2;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 413);
+            this.ClientSize = new System.Drawing.Size(481, 417);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.PhotoPanel);
             this.Controls.Add(this.richTextBox1);
