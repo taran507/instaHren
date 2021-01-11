@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.GroupBox groupBox1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UploadPhoto));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -38,8 +40,13 @@
             this.PhotoPanel = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Пост = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            groupBox1 = new System.Windows.Forms.GroupBox();
             this.PhotoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -47,7 +54,7 @@
             this.checkBox1.AutoEllipsis = true;
             this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox1.Location = new System.Drawing.Point(350, 12);
+            this.checkBox1.Location = new System.Drawing.Point(4, 19);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 16);
             this.checkBox1.TabIndex = 0;
@@ -60,7 +67,7 @@
             this.checkBox2.AutoEllipsis = true;
             this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox2.Location = new System.Drawing.Point(350, 36);
+            this.checkBox2.Location = new System.Drawing.Point(4, 46);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(92, 16);
             this.checkBox2.TabIndex = 0;
@@ -73,7 +80,7 @@
             this.checkBox3.AutoEllipsis = true;
             this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox3.Location = new System.Drawing.Point(350, 58);
+            this.checkBox3.Location = new System.Drawing.Point(4, 73);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(92, 16);
             this.checkBox3.TabIndex = 0;
@@ -83,32 +90,36 @@
             // 
             // Open_file_botton
             // 
-            this.Open_file_botton.Location = new System.Drawing.Point(367, 338);
+            this.Open_file_botton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Open_file_botton.ForeColor = System.Drawing.Color.White;
+            this.Open_file_botton.Location = new System.Drawing.Point(377, 321);
             this.Open_file_botton.Name = "Open_file_botton";
             this.Open_file_botton.Size = new System.Drawing.Size(75, 23);
             this.Open_file_botton.TabIndex = 1;
             this.Open_file_botton.Text = "Open file";
-            this.Open_file_botton.UseVisualStyleBackColor = true;
+            this.Open_file_botton.UseVisualStyleBackColor = false;
             this.Open_file_botton.Click += new System.EventHandler(this.Open_file_botton_Click);
             // 
             // Upload_photo
             // 
-            this.Upload_photo.Location = new System.Drawing.Point(367, 378);
+            this.Upload_photo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Upload_photo.ForeColor = System.Drawing.Color.White;
+            this.Upload_photo.Location = new System.Drawing.Point(377, 350);
             this.Upload_photo.Name = "Upload_photo";
             this.Upload_photo.Size = new System.Drawing.Size(75, 23);
             this.Upload_photo.TabIndex = 2;
             this.Upload_photo.Text = "Ok";
-            this.Upload_photo.UseVisualStyleBackColor = true;
+            this.Upload_photo.UseVisualStyleBackColor = false;
             this.Upload_photo.Click += new System.EventHandler(this.Upload_photo_Click);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(12, 307);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(332, 75);
+            this.richTextBox1.Size = new System.Drawing.Size(332, 66);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Tag = "comment";
-            this.richTextBox1.Text = "dfv";
+            this.richTextBox1.Text = "Комментарий...";
             // 
             // openFileDialog1
             // 
@@ -151,28 +162,66 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 381);
+            this.dateTimePicker1.Location = new System.Drawing.Point(365, 276);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(94, 20);
             this.dateTimePicker1.TabIndex = 10;
+            // 
+            // Пост
+            // 
+            this.Пост.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Пост.Location = new System.Drawing.Point(4, 99);
+            this.Пост.Name = "Пост";
+            this.Пост.Size = new System.Drawing.Size(92, 16);
+            this.Пост.TabIndex = 11;
+            this.Пост.Text = "Пост";
+            this.Пост.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Пост.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(this.checkBox1);
+            groupBox1.Controls.Add(this.Пост);
+            groupBox1.Controls.Add(this.checkBox2);
+            groupBox1.Controls.Add(this.checkBox3);
+            groupBox1.Enabled = false;
+            groupBox1.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            groupBox1.Location = new System.Drawing.Point(359, 112);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(102, 129);
+            groupBox1.TabIndex = 12;
+            groupBox1.TabStop = false;
+            groupBox1.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(360, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // UploadPhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 417);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(479, 389);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(groupBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.PhotoPanel);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.Upload_photo);
             this.Controls.Add(this.Open_file_botton);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UploadPhoto";
-            this.Text = "UploadPhoto";
+            this.Text = "Instagram Poster";
             this.PhotoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +238,7 @@
         private System.Windows.Forms.TableLayoutPanel PhotoPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox Пост;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

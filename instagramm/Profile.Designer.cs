@@ -48,9 +48,11 @@
             // PhotoProfile
             // 
             this.PhotoProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.PhotoProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PhotoProfile.BackgroundImage")));
+            this.PhotoProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PhotoProfile.Location = new System.Drawing.Point(12, 12);
             this.PhotoProfile.Name = "PhotoProfile";
-            this.PhotoProfile.Size = new System.Drawing.Size(175, 173);
+            this.PhotoProfile.Size = new System.Drawing.Size(214, 214);
             this.PhotoProfile.TabIndex = 0;
             this.PhotoProfile.TabStop = false;
             // 
@@ -71,7 +73,7 @@
             this.OpenFile.BackColor = System.Drawing.Color.DodgerBlue;
             this.OpenFile.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OpenFile.ForeColor = System.Drawing.Color.White;
-            this.OpenFile.Location = new System.Drawing.Point(163, 347);
+            this.OpenFile.Location = new System.Drawing.Point(12, 424);
             this.OpenFile.Name = "OpenFile";
             this.OpenFile.Size = new System.Drawing.Size(87, 27);
             this.OpenFile.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             this.Follovers.AutoSize = true;
             this.Follovers.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Follovers.Location = new System.Drawing.Point(207, 12);
+            this.Follovers.Location = new System.Drawing.Point(234, 16);
             this.Follovers.Name = "Follovers";
             this.Follovers.Size = new System.Drawing.Size(55, 15);
             this.Follovers.TabIndex = 5;
@@ -93,7 +95,7 @@
             // 
             this.Folloving.AutoSize = true;
             this.Folloving.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Folloving.Location = new System.Drawing.Point(207, 37);
+            this.Folloving.Location = new System.Drawing.Point(232, 37);
             this.Folloving.Name = "Folloving";
             this.Folloving.Size = new System.Drawing.Size(57, 15);
             this.Folloving.TabIndex = 5;
@@ -103,7 +105,7 @@
             // 
             this.Post.AutoSize = true;
             this.Post.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Post.Location = new System.Drawing.Point(232, 64);
+            this.Post.Location = new System.Drawing.Point(259, 61);
             this.Post.Name = "Post";
             this.Post.Size = new System.Drawing.Size(30, 15);
             this.Post.TabIndex = 5;
@@ -113,9 +115,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(13, 203);
+            this.listBox1.Location = new System.Drawing.Point(13, 257);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(174, 94);
+            this.listBox1.Size = new System.Drawing.Size(213, 109);
             this.listBox1.TabIndex = 2;
             // 
             // deleteButton
@@ -169,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(943, 493);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.Post);
@@ -180,7 +182,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.PhotoProfile);
             this.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(959, 532);
             this.MinimizeBox = false;
