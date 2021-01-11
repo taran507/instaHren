@@ -57,7 +57,7 @@
             // 
             this.textLogin.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textLogin.Font = new System.Drawing.Font("Corbel Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textLogin.Location = new System.Drawing.Point(65, 221);
+            this.textLogin.Location = new System.Drawing.Point(65, 233);
             this.textLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(283, 27);
@@ -68,7 +68,7 @@
             // 
             this.textPassword.BackColor = System.Drawing.SystemColors.Menu;
             this.textPassword.Font = new System.Drawing.Font("Corbel Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textPassword.Location = new System.Drawing.Point(65, 256);
+            this.textPassword.Location = new System.Drawing.Point(65, 268);
             this.textPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
